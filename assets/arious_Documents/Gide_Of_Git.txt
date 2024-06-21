@@ -184,12 +184,12 @@ Como es lo normal las terminales nombradas en este documento tiene algunos coman
 
 1. git branch//O sea las ramas que se han hecho del código en el tiempo. Y nos debe de aparecer la palabra main.
 2. cat nombredelarchivo.tal // para ver el contenido de nuestro archivo.
-2. git checkout master (main).
-3. git chekout -b ramafooter //como se quiera llamar a esa rama.
-4. git chekout main (master) para regresar a la rama principal pues nos encontrábamos en ramafooter.
-5. git log //nos muestra lo que se ha hecho en la rama main.
-6. git merch ramafooter //para unir la ramafooter y la rama main.
-7. git branch -d y el nombre de la rama para eliminarla.
+3. git checkout master (main).
+4. git chekout -b ramafooter //como se quiera llamar a esa rama.
+5. git chekout main (master) para regresar a la rama principal pues nos encontrábamos en ramafooter.
+6. git log //nos muestra lo que se ha hecho en la rama main.
+7. git merch ramafooter //para unir la ramafooter y la rama main.
+8. git branch -d y el nombre de la rama para eliminarla.
 
 ## Comandos Para Trabajo Remoto Con GIT
 

@@ -196,7 +196,7 @@ Como es lo normal las terminales nombradas en este documento tiene algunos coman
 
 ### Algunos comandos que pueden ayudar cuando colaboren con proyectos muy grandes de GitHub
 
-. **git log --online** //Te muestra el id commit y el título del commit.
+- **git log --online** //Te muestra el id commit y el título del commit.
 **git log --decorate** //Te muestra donde se encuentra el head point en el log.
 **git log --stat** //Explica el número de líneas que se cambiaron brevemente.
 **git log -p** //Explica el número de líneas que se cambiaron y te muestra que se cambió en el contenido.

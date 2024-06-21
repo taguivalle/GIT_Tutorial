@@ -196,13 +196,13 @@ Como es lo normal las terminales nombradas en este documento tiene algunos coman
 
 ### Algunos comandos que pueden ayudar cuando colaboren con proyectos muy grandes de GitHub
 
-    * **git log --online** //Te muestra el id commit y el título del commit.
-    * **git log --decorate** //Te muestra donde se encuentra el head point en el log.
-    * **git log --stat** //Explica el número de líneas que se cambiaron brevemente.
-    * **git log -p** //Explica el número de líneas que se cambiaron y te muestra que se cambió en el contenido.
-    * **git shortlog** //Indica que commits ha realizado un usuario, mostrando el usuario y el titulo de sus commits.
-    * **git log --graph** --online --decorate y git log --pretty=format:"%cn hizo un commit %h el día %cd" //Muestra mensajes personalizados de los commits.
-    * **git log -3** //Limitamos el número de commits.
+. **git log --online** //Te muestra el id commit y el título del commit.
+**git log --decorate** //Te muestra donde se encuentra el head point en el log.
+**git log --stat** //Explica el número de líneas que se cambiaron brevemente.
+**git log -p** //Explica el número de líneas que se cambiaron y te muestra que se cambió en el contenido.
+**git shortlog** //Indica que commits ha realizado un usuario, mostrando el usuario y el titulo de sus commits.
+**git log --graph** --online --decorate y git log --pretty=format:"%cn hizo un commit %h el día %cd" //Muestra mensajes personalizados de los commits.
+**git log -3** //Limitamos el número de commits.
 **git log --after=“2018-1-2”, git log --after=“today” y git log --after=“2018-1-2” --before=“today”** // son los commits para localizar por fechas.
 **git log --author=“Name Author”** //Commits realizados por un autor que cumplan exactamente con el nombre.
 **git log --grep=“INVIE”** //Busca los commits que cumplan tal cual está escrito entre las comillas.

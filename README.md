@@ -2,15 +2,15 @@
 
 ## Introducción
 
-Git significa que, esta es una herramienta tecnológica que nos permite guardar esos cambios que se hacen en el código tanto del usuario principal como de los colaboradores; pero, de una manera más exacta; como por ejemplo; saber quién hizo los cambios, saber la fecha, hora exacta; además con estos datos de se puede regresar en algún momento que haya podido encontrarse un error en el código.
+Git es una herramienta tecnológica que nos permite guardar esos cambios que se hacen en el código tanto del usuario principal como de los colaboradores; pero, de una manera más exacta; como por ejemplo; saber quién hizo los cambios, saber la fecha, hora exacta; además con estos datos se puede regresar en algún momento que haya podido encontrarse un error en el código.
 
 Git fue diseñado para operar en un entorno Linux. Pero, actualmente es multiplataforma, es decir, es compatible con Linux, MacOS y Windows. En la máquina local se encuentra Git, se utiliza bajo la terminal o línea de comandos y tiene comandos como merge, pull, add, commit y rebase, entre otros.
 
 ## Algunos Conceptos para Conocimientos Generales
 
-### El y/o la Terminal CMD
+### El y/o la Terminal([CMD](https://www.godaddy.com/resources/latam/stories/cmd-que-es-como-usar-linea-de-comandos-windows))
 
-Para muchos es de pleno conocimiento que, **la Terminal CMD**, también conocida como Símbolo del Sistema, es una ventana de comandos que permite interactuar con el sistema operativo Windows de manera textual. A continuación, se presentan algunos conceptos básicos y comandos útiles para empezar a utilizar la Terminal CMD:
+Para muchos es de pleno conocimiento que, **la Terminal CMD**, también conocida como el Símbolo del Sistema, es una ventana de comandos que permite interactuar con el sistema operativo Windows de manera textual. A continuación, se presentan algunos conceptos básicos y comandos útiles para empezar a utilizar la Terminal CMD:
 
 ### Acceso a la Terminal CMD
 
@@ -44,7 +44,7 @@ Otro aspecto a tener en cuenta o más bien la herramienta consola, terminal y sh
 **Terminal**: Un entorno de entrada y salida de texto que emula una GUI, es decir, una consola en una interfaz gráfica de usuario.
 **Shell**: Un programa que emula la consola y te permite interactuar con el sistema operativo.
 
-En resumen, la Terminal CMD es una ventana de comandos que te permite interactuar con el sistema operativo Windows de manera textual y como su nombre lo índica se realiza a traves de comandos, y es un herramienta útil para realizar tareas de manera rápida y eficiente. A continuación y mediante este link ([UrbanTcno](https://www.mundodeportivo.com/urbantecno/windows/todos-comandos-cmd-de-windows-lista-completa)) se puede tener acceso a una guía de los comandos más utilizados en esta herramienta.
+En resumen, la Terminal CMD es una ventana de comandos que te permite interactuar con los sistemas operativos antes mencionados de manera textual y como su nombre lo índica se realiza a traves de comandos, y es un herramienta útil para realizar tareas de manera rápida y eficiente. A continuación y mediante este link ([Git](https://git-scm.com/cheat-sheet)) se puede tener acceso a una guía de los comandos más utilizados en esta herramienta.
 
 ## Power Shell
 
@@ -52,7 +52,7 @@ Incialmente, PowerShell es un shell de comandos moderno y un lenguaje de scripti
 
 ## Características de PowerShell
 
-Entre las características más destacadas de PowerShell se encuentran:
+Entre las características más destacadas de ([PowerShell](https://learn.microsoft.com/es-es/powershell/scripting/overview?view=powershell-7.5)) se encuentran:
 
 1. **Interfaz de línea de comandos**: PowerShell es una interfaz de línea de comandos que permite a los usuarios interactuar con el sistema operativo mediante comandos escritos en lenguaje natural.
 2. **Lenguaje de scripting**: PowerShell incluye un lenguaje de scripting que permite crear scripts complejos para automatizar tareas repetitivas y tediosas.
@@ -211,4 +211,4 @@ Como es lo normal las terminales nombradas en este documento tiene algunos coman
 **git log -S “Por contenido”** //Buscar los commits con el contenido dentro del archivo.
 **git log > log.txt** //guardar los logs en un archivo txt.
 
-Es prudente recordar que, en la web hoy en día existen infinidades de informaciones al respecto del tema de GTI, y como sugerencia en el siguiente link de la fuente original de [GIT](https://git-scm.com/) en esta, se pueden enriquecer con los conocimiento sencillos de este apasionante tema.
+Es prudente recordar que, en la web hoy en día existen infinidades de informaciones al respecto del tema de GTI, y como sugerencia en el siguiente link de la fuente original de [GIT](https://git-scm.com/) en esta, se pueden enriquecer con los conocimiento sencillos de este apasionante tema. De otra parte, se realizó un pequeño recorderis dentro de la página index.html.

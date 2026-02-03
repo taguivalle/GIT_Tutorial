@@ -1,60 +1,253 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <!-- Esta etiqueta nos permite que se vea en un dispositivo diferente al de un pc. -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Otra etiqueta muy importante a tener en cuenta: -->
-    <meta name="description" content="Página web de blog de café">
-    <title>Demo Git</title>
-    <!-- Con este link se inserta el icono en el título de la pagina "Blog de Café. " 
-        https://imagen.online-convert.com/es/convertir/png-a-ico. -->
-    <link rel="shortcut icon" href="icons/git.ico" type="image/x-icon">
-    <!-- Los preloads nos permite recargar más rápidamente. Para este caso de normalize. -->
-    <link rel="preload" href="css/normalize.css" as="css" />
-    <link rel="stylesheet" href="css/normalize.css">
-    <!-- Este es el preload del google font. -->
-    <link rel="preload" href="https://fonts.googleapis.com" as="font">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- Este es el preload del google font. -->
-    <link rel="preload" href="https://fonts.gstatic.com" crossorigin="crossorigin" as="font">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- Este es el preload del google font. -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
-        crossorigin="crossorigin" as="font">
-    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap">
-    <!-- Los preloads nos permite recargar más rápidamente. Para este caso de los estilos. -->
-    <link rel="preload" href="css/style.css" crossorigin="crossorigin" as="css">
-    <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- El prefetch nos permite llevar la siguiente página que esperaríamos (Una especie de intuición) que el usuario 
-        visite más rápidamente y/o para darle una mejor experiencia. (Google analytics) -->
-    <link rel="prefetch" href="nosotros.html" as="document">
-</head>
-<h1>Libro</h1>
-<p>Incialmente, advertir que, lo realizado en este documento fué extraído en la mayor parte de El libro completo
-    de Pro Git, escrito por <a
-        href="https://www.amazon.es/stores/Scott-Chacon/author/B00530T6CU?shoppingPortalEnabled=true" target="_blank"
-        rel="noopener noreferrer">Scott
-        Chacon</a> y <a href="http://www.amazon.es/stores/Ben-Straub/author/B00OP1XH96?shoppingPortalEnabled=true"
-        target="_blank" rel="noopener noreferrer">Ben
-        Straub</a> y
-    publicado por <a href="https://www.apress.com/gp" target="_blank" rel="noopener noreferrer">Apress</a>, está
-    disponible <a href="https://www.amazon.es/Pro-Git-Scott-Chacon/dp/1484200772" target="_blank"
-        rel="noopener noreferrer">Amazon</a>. Todo
-    el contenido está licenciado bajo la Licencia <a href="https://creativecommons.org/" target="_blank"
-        rel="noopener noreferrer">Creative Commons</a> Atribución No Comercial Compartir Igual 3.0. Las
-    versiones impresas del libro están disponibles en <a href="https://www.amazon.es/Pro-Git-Scott-Chacon/dp/1484200772"
-        target="_blank" rel="noopener noreferrer">Amazon.com</a></p> <br>
-<p>La versión que se encuentra aquí ha sido actualizada con correcciones y adiciones de <a
-        href="https://github.com/progit/progit2/graphs/contributors" target="_blank" rel="noopener noreferrer">cientos
-        de colaboradores</a>. Si ve
-    un error o tiene una sugerencia, los parches y problemas son bienvenidos repositorio de <a
-        href="https://github.com/progit/progit2" target="_blank" rel="noopener noreferrer">GitHub.</a></p>
+    <!DOCTYPE html>
+    <html lang="es" data-theme="">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tutoría de Git y GitHub</title>
+
+        <!-- Icono -->
+        <link rel="icon" href="icons/git.ico" type="image/x-icon">
+
+        <!-- ---------- PRELOAD ---------- -->
+        <!-- Normalizar estilos -->
+        <link rel="preload" href="css/normalize.css" as="style">
+        <link rel="stylesheet" href="css/normalize.css">
+
+        <!-- Hoja de estilos propia (preload correcto) -->
+        <link rel="preload" href="css/style.css" as="style" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- ---------- FUENTES ---------- -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" as="style"
+            crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    </head>
 
 <body>
 
+    <header class="navbar">
+        <div class="container">
+            <h1 class="logo">Git &amp; GitHub</h1>
+
+            <!-- Botón de modo oscuro -->
+            <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar a modo oscuro">
+                🌙
+            </button>
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="#intro">Introducción</a></li>
+                    <li><a href="#book">Sobre el libro</a></li>
+                    <li><a href="#commands">Comandos</a></li>
+                    <li><a href="#credits">Créditos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- 1️⃣ INTRODUCCIÓN -->
+        <section id="intro">
+            <h2>Introducción</h2>
+            <p>
+                Este tutorial está basado en el libro <em>Pro Git</em> de Scott Chacon y Ben Straub,
+                publicado por Apress y disponible bajo licencia Creative Commons Atribución‑NoComercial‑CompartirIgual
+                3.0.
+            </p>
+        </section>
+
+        <!-- 2️⃣ SOBRE EL LIBRO -->
+        <section id="book">
+            <h2>Libro</h2>
+            <p>
+                Inicialmente, el contenido proviene mayormente del libro <strong>Pro Git</strong>,
+                escrito por
+                <a href="https://www.amazon.es/stores/Scott-Chacon/author/B00530T6CU?shoppingPortalEnabled=true"
+                    target="_blank" rel="noopener noreferrer">Scott Chacon</a> y
+                <a href="http://www.amazon.es/stores/Ben-Straub/author/B00OP1XH96?shoppingPortalEnabled=true"
+                    target="_blank" rel="noopener noreferrer">Ben Straub</a>,
+                publicado por <a href="https://www.apress.com/gp" target="_blank" rel="noopener noreferrer">Apress</a>.
+                Puedes adquirirlo en
+                <a href="https://www.amazon.es/Pro-Git-Scott-Chacon/dp/1484200772" target="_blank"
+                    rel="noopener noreferrer">Amazon</a>.
+            </p>
+            <p>
+                El contenido está licenciado bajo la Licencia
+                <a href="https://creativecommons.org/" target="_blank" rel="noopener noreferrer">Creative Commons</a>
+                Atribución‑NoComercial‑CompartirIgual 3.0.
+            </p>
+            <section id="commands">
+                <h2>Comandos básicos de Git</h2>
+
+                <!-- ==== COMANDO: git init ==== -->
+                <div class="command-block">
+                    <pre><code>git init</code></pre>
+                    <button class="copy-btn" data-cmd="git init">Copiar</button>
+                    <p class="cmd-desc">
+                        Con este comando se crea un repositorio vacío en el directorio actual,
+                        iniciando el control de versiones para los archivos que allí se encuentren.
+                    </p>
+                </div>
+
+                <!-- ==== COMANDO: git status ==== -->
+                <div class="command-block">
+                    <pre><code>git status</code></pre>
+                    <button class="copy-btn" data-cmd="git status">Copiar</button>
+                    <p class="cmd-desc">
+                        Muestra el estado actual del árbol de trabajo: archivos modificados,
+                        pendientes de confirmar o sin seguimiento.
+                    </p>
+                </div>
+
+                <!-- ==== COMANDO: git add . ==== -->
+                <div class="command-block">
+                    <pre><code>git add .</code></pre>
+                    <button class="copy-btn" data-cmd="git add .">Copiar</button>
+                    <p class="cmd-desc">
+                        Añade **todos** los cambios del directorio actual al área de preparación
+                        (staging area) para el próximo commit.
+                    </p>
+                </div>
+
+                <!-- ==== COMANDO: git commit ==== -->
+                <div class="command-block">
+                    <pre><code>git commit -m "Aquí se escribe el mensaje del commit acorde a los cambios que se han hecho."</code></pre>
+                    <button class="copy-btn" data-cmd='git commit -m "Mensaje del commit"'>Copiar</button>
+                    <p class="cmd-desc">
+                        Registra en el historial una instantánea de los archivos preparados,
+                        asociándole el mensaje descriptivo que indiques entre comillas.
+                    </p>
+                </div>
+
+                <!-- ==== COMANDO: git push ==== -->
+                <div class="command-block">
+                    <pre><code>git push origin main</code></pre>
+                    <button class="copy-btn" data-cmd="git push origin main">Copiar</button>
+                    <p class="cmd-desc">
+                        Envía los commits locales de la rama **main** al repositorio remoto llamado
+                        `origin`, actualizando la copia remota.
+                    </p>
+                </div>
+
+                <!-- ==== COMANDO: git branch ==== -->
+                <div class="command-block">
+                    <pre><code>git branch nombre-rama</code></pre>
+                    <button class="copy-btn" data-cmd="git branch nombre-rama">Copiar</button>
+                    <p class="cmd-desc">
+                        Crea una nueva rama llamada `nombre-rama` a partir de la rama actual,
+                        sin cambiar el HEAD todavía.
+                    </p>
+                </div>
+
+                <!-- ==== COMANDO: git checkout ==== -->
+                <div class="command-block">
+                    <pre><code>git checkout nombre-rama</code></pre>
+                    <button class="copy-btn" data-cmd="git checkout nombre-rama">Copiar</button>
+                    <p class="cmd-desc">
+                        Cambia el HEAD a la rama especificada, poniendo el árbol de trabajo
+                        en el estado de esa rama.
+                    </p>
+                </div>
+
+                <!-- ==== COMANDO: git merge ==== -->
+                <div class="command-block">
+                    <pre><code>git merge nombre-rama</code></pre>
+                    <button class="copy-btn" data-cmd="git merge nombre-rama">Copiar</button>
+                    <p class="cmd-desc">
+                        Integra los cambios de `nombre-rama` en la rama actual,
+                        creando un nuevo commit de fusión si es necesario.
+                    </p>
+                </div>
+
+                <!-- ==== COMANDO: git pull ==== -->
+                <div class="command-block">
+                    <pre><code>git pull origin main</code></pre>
+                    <button class="copy-btn" data-cmd="git pull origin main">Copiar</button>
+                    <p class="cmd-desc">
+                        Descarga los últimos cambios de `origin/main` y los fusiona automáticamente
+                        con la rama local activa.
+                    </p>
+                </div>
+
+                <!-- ==== COMANDO: git log ==== -->
+                <div class="command-block">
+                    <pre><code>git log --oneline --graph --decorate</code></pre>
+                    <button class="copy-btn" data-cmd="git log --oneline --graph --decorate">Copiar</button>
+                    <p class="cmd-desc">
+                        Muestra el historial de commits de forma compacta, con un grafo visual y
+                        referencias a ramas/tags.
+                    </p>
+                </div>
+
+                <!-- ==== COMANDO: git remote add ==== -->
+                <div class="command-block">
+                    <pre><code>git remote add origin https://github.com/usuario/repositorio.git</code></pre>
+                    <button class="copy-btn"
+                        data-cmd="git remote add origin https://github.com/usuario/repositorio.git">Copiar</button>
+                    <p class="cmd-desc">
+                        Asocia el repositorio remoto `origin` con la URL indicada,
+                        permitiendo futuros `push` y `pull`.
+                    </p>
+                </div>
+
+                <!-- ==== COMANDO: git fetch ==== -->
+                <div class="command-block">
+                    <pre><code>git fetch origin</code></pre>
+                    <button class="copy-btn" data-cmd="git fetch origin">Copiar</button>
+                    <p class="cmd-desc">
+                        Obtiene los objetos y referencias del remoto `origin` sin fusionarlos
+                        automáticamente con la rama local.
+                    </p>
+                </div>
+
+                <!-- ==== COMANDO: git clone ==== -->
+                <div class="command-block">
+                    <pre><code>git clone https://github.com/usuario/repositorio.git</code></pre>
+                    <button class="copy-btn"
+                        data-cmd="git clone https://github.com/usuario/repositorio.git">Copiar</button>
+                    <p class="cmd-desc">
+                        Crea una copia local completa del repositorio remoto indicado,
+                        configurando automáticamente `origin` como remoto predeterminado.
+                    </p>
+                </div>
+
+            </section>
+            <!-- Puedes seguir añadiendo más bloques de comandos -->
+        </section>
+
+        <!-- 4️⃣ CRÉDITOS -->
+        <section id="credits">
+            <h2>Créditos</h2>
+            <p>
+                La versión que ves aquí ha sido actualizada con correcciones y adiciones de
+                <a href="https://github.com/progit/progit2/graphs/contributors" target="_blank"
+                    rel="noopener noreferrer">cientos de colaboradores</a>.
+                Si detectas algún error o tienes una sugerencia, los parches y problemas son bienvenidos
+                en el repositorio de
+                <a href="https://github.com/progit/progit2" target="_blank" rel="noopener noreferrer">GitHub</a>.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 • Tutorial de Git y GitHub – creado con ❤️ por Lumo (Proton).</p>
+        </div>
+    </footer>
+
+    <!-- Archivo JavaScript externo -->
+    <script src="js/main.js"></script> <!-- tu script original -->
+    <script src="js/theme.js"></script> <!-- EL SCRIPT DE MODO OSCURO -->
 </body>
 
 </html>

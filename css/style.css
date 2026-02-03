@@ -1,0 +1,129 @@
+/* Reset básico (ya tienes normalize.css, pero añadimos algunos ajustes) */
+* {
+    box-sizing: border-box;
+}
+
+/* Variables de color (puedes ajustarlas) */
+:root {
+    --primary: #2c3e50;
+    --secondary: #ecf0f1;
+    --accent: #3498db;
+    --bg: #f9f9f9;
+    --text: #333;
+}
+
+/* Tipografía global */
+body {
+    font-family: 'PT Sans', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+}
+
+/* Contenedor central */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Header / Navbar */
+.navbar {
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 0.8rem 0;
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+}
+
+.menu a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* Títulos */
+h1,
+h2 {
+    color: var(--primary);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Secciones */
+section {
+    margin-bottom: 2rem;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary);
+    color: var(--secondary);
+    text-align: center;
+    padding: 0.8rem 0;
+    font-size: 0.9rem;
+}
+
+/* Bloques de comando (mantén lo que ya tienes) */
+.command-block {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    /* <‑‑ ahora el botón y la descripción quedan bajo el código */
+    gap: 0.5rem;
+    /* espacio entre los hijos */
+}
+
+/* Código */
+.command-block pre {
+    margin: 0;
+    font-size: 0.95rem;
+    overflow-x: auto;
+}
+
+/* Botón de copiar */
+.copy-btn {
+    align-self: flex-start;
+    /* alineado a la izquierda */
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: #2980b9;
+}
+
+/* Descripción del comando */
+.cmd-desc {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.4;
+}

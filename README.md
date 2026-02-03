@@ -211,4 +211,4 @@ Como es lo normal las terminales nombradas en este documento tiene algunos coman
 **git log -S “Por contenido”** //Buscar los commits con el contenido dentro del archivo.
 **git log > log.txt** //guardar los logs en un archivo txt.
 
-Es prudente recordar que, en la web hoy en día existen infinidades de informaciones al respecto del tema de GTI, y como sugerencia en el siguiente link de la fuente original de [GIT](https://git-scm.com/) en esta, se pueden enriquecer con los conocimiento sencillos de este apasionante tema. De otra parte, se realizó un pequeño recorderis dentro de la página index.html.
+Es prudente recordar que, en la web hoy en día existen infinidades de informaciones al respecto del tema de GTI, y como sugerencia en el siguiente link de la fuente original de [GIT](https://git-scm.com/) en esta, se pueden enriquecer con los conocimiento sencillos de este apasionante tema. De otra parte, se realizó un pequeño recorderis dentro de la página index.

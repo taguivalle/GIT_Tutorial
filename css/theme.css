@@ -1,0 +1,27 @@
+/* VARIABLES GLOBALES (tema claro por defecto) */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --primary-color: #2c3e50;
+    --secondary-color: #ecf0f1;
+    --accent-color: #3498db;
+    --border-color: #ddd;
+}
+
+/* ESTILOS QUE UTILIZAN LAS VARIABLES */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* ... resto de tus reglas (navbar, .command-block, .copy-btn, etc.) ... */
+
+/* MODO OSCURO – SOLO SE ACTIVA CUANDO html[data-theme="dark"] */
+html[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #1e1e1e;
+    --secondary-color: #1f2a38;
+    --accent-color: #ff9800;
+    --border-color: #333;
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía práctica de Git &amp; GitHub</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <h1>Guía práctica de Git &amp; GitHub</h1>
+        <p>Aprende a versionar tu código y a colaborar en proyectos.</p>
+    </header>
+
+    <nav class="site-nav">
+        <ul>
+            <li><a href="#intro">Introducción</a></li>
+            <li><a href="#conceptos">Conceptos básicos</a></li>
+            <li><a href="#instalacion">Instalación</a></li>
+            <li><a href="#comandos">Comandos esenciales</a></li>
+            <li><a href="#flujo">Flujo de trabajo</a></li>
+            <li><a href="#github">GitHub</a></li>
+            <li><a href="#practica">Practica</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- 1️⃣ Introducción -->
+        <section id="intro">
+            <h2>Introducción</h2>
+            <p>Git es un sistema de control de versiones distribuido; GitHub es una plataforma que aloja repositorios
+                Git y facilita la colaboración.</p>
+        </section>
+
+        <!-- 2️⃣ Conceptos básicos -->
+        <section id="conceptos">
+            <h2>Conceptos básicos</h2>
+            <dl>
+                <dt>Repositorio</dt>
+                <dd>Contenedor que guarda todo el historial de cambios.</dd>
+                <dt>Commit</dt>
+                <dd>Instantánea del proyecto en un momento dado.</dd>
+                <dt>Branch (rama)</dt>
+                <dd>Línea paralela de desarrollo.</dd>
+                <dt>Merge</dt>
+                <dd>Unir cambios de una rama a otra.</dd>
+                <dt>Staging area</dt>
+                <dd>Zona intermedia donde se preparan los archivos antes del commit.</dd>
+            </dl>
+        </section>
+
+        <!-- 3️⃣ Instalación -->
+        <section id="instalacion">
+            <h2>Instalación</h2>
+            <p>En macOS:</p>
+            <pre><code>brew install git</code></pre>
+            <p>En Ubuntu/Debian:</p>
+            <pre><code>sudo apt-get update && sudo apt-get install git</code></pre>
+            <p>En Windows: descarga el instalador desde <a href="https://git-scm.com/">git‑scm.com</a>.</p>
+        </section>
+
+        <!-- 4️⃣ Tabla de comandos -->
+        <section id="comandos">
+            <h2>Comandos esenciales</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Comando</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>git init</td>
+                        <td>Crea un nuevo repositorio local.</td>
+                        <td><code>git init mi-proyecto</code></td>
+                    </tr>
+                    <tr>
+                        <td>git clone</td>
+                        <td>Clona un repositorio remoto.</td>
+                        <td><code>git clone https://github.com/usuario/repo.git</code></td>
+                    </tr>
+                    <tr>
+                        <td>git status</td>
+                        <td>Muestra el estado de los archivos.</td>
+                        <td><code>git status</code></td>
+                    </tr>
+                    <tr>
+                        <td>git add</td>
+                        <td>Agrega archivos al staging area.</td>
+                        <td><code>git add .</code></td>
+                    </tr>
+                    <tr>
+                        <td>git commit</td>
+                        <td>Registra los cambios.</td>
+                        <td><code>git commit -m "Mensaje"</code></td>
+                    </tr>
+                    <tr>
+                        <td>git push</td>
+                        <td>Envía commits al remoto.</td>
+                        <td><code>git push origin main</code></td>
+                    </tr>
+                    <tr>
+                        <td>git pull</td>
+                        <td>Trae y fusiona cambios del remoto.</td>
+                        <td><code>git pull origin main</code></td>
+                    </tr>
+                    <tr>
+                        <td>git branch</td>
+                        <td>Lista o crea ramas.</td>
+                        <td><code>git branch nueva-funcionalidad</code></td>
+                    </tr>
+                    <tr>
+                        <td>git merge</td>
+                        <td>Fusiona una rama en la actual.</td>
+                        <td><code>git merge nueva-funcionalidad</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 5️⃣ Flujo de trabajo -->
+        <section id="flujo">
+            <h2>Flujo de trabajo típico</h2>
+            <ol>
+                <li>Crear repositorio (`git init`).</li>
+                <li>Añadir archivos (`git add`).</li>
+                <li>Hacer commit (`git commit`).</li>
+                <li>Crear repositorio remoto en GitHub y enlazarlo (`git remote add origin …`).</li>
+                <li>Push al remoto (`git push -u origin main`).</li>
+                <li>Crear ramas para nuevas funcionalidades, trabajar, mergear, etc.</li>
+            </ol>
+            <img src="./assets/flujo-git.svg" alt="Diagrama del flujo de trabajo con Git">
+        </section>
+
+        <!-- 6️⃣ GitHub -->
+        <section id="github">
+            <h2>Trabajar con GitHub</h2>
+            <p>Pasos básicos para crear un repo remoto:</p>
+            <ol>
+                <li>En GitHub, pulsa <strong>New repository</strong>.</li>
+                <li>Selecciona nombre, descripción y visibilidad.</li>
+                <li>No marques “Initialize with a README” (ya lo tienes).</li>
+                <li>Copia la URL del repo (HTTPS o SSH).</li>
+                <li>En tu terminal: <code>git remote add origin &lt;URL&gt;</code></li>
+                <li>Empuja tu rama principal: <code>git push -u origin main</code></li>
+            </ol>
+            <p>También puedes usar <strong>Fork</strong>, <strong>Pull Request</strong> y <strong>Issues</strong> para
+                colaborar.</p>
+        </section>
+
+        <!-- 7️⃣ Sandbox interactivo -->
+        <section id="practica">
+            <h2>Practica en línea</h2>
+            <p>Abre el sandbox y sigue los ejercicios propuestos:</p>
+            <a href="https://gitpod.io/#https://github.com/tu-usuario/git-tutorial-sandbox" target="_blank"
+                rel="noopener" class="button">Abrir sandbox en GitPod</a>
+
+            <p>O usa el iframe de Replit:</p>
+            <iframe src="https://replit.com/@tu-usuario/git-tutorial-sandbox?lite=true" width="100%" height="500px"
+                frameborder="0"></iframe>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 — <a href="https://github.com/tu-usuario/git-tutorial">Git Tutorial</a></p>
+    </footer>
+
+</body>
+
+</html>

@@ -6,19 +6,17 @@
 /* Variables de color (puedes ajustarlas) */
 :root {
     --primary: #2c3e50;
-    --secondary: #ecf0f1;
     --accent: #3498db;
-    --bg: #f9f9f9;
+    --bg: #fafafa;
     --text: #333;
 }
 
 /* Tipografía global */
 body {
-    font-family: 'PT Sans', sans-serif;
-    line-height: 1.6;
-    background-color: var(--bg);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
     color: var(--text);
-    margin: 0;
+    line-height: 1.6;
 }
 
 /* Contenedor central */

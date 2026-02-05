@@ -3,39 +3,52 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sólo un meta viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Guía práctica de Git y GitHub">
     <title>Guía práctica de Git &amp; GitHub</title>
-    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Reset (opcional) -->
+    <link rel="stylesheet" href="./css/normalize.css">
+
+    <!-- Nuestra hoja de estilos principal -->
+    <link rel="stylesheet" href="./css/theme.css">
 </head>
 
 <body>
-
+    <!-- ---------- HEADER ---------- -->
     <header class="site-header">
         <h1>Guía práctica de Git &amp; GitHub</h1>
         <p>Aprende a versionar tu código y a colaborar en proyectos.</p>
+
+        <!-- Botón hamburguesa (solo visible en móvil) -->
+        <button id="mobile-menu-toggle" aria-label="Abrir menú">☰</button>
     </header>
 
-    <nav class="site-nav">
-        <ul>
+    <!-- ---------- NAVIGATION ---------- -->
+    <nav id="site-nav" class="site-nav">
+        <ul class="menu">
             <li><a href="#intro">Introducción</a></li>
             <li><a href="#conceptos">Conceptos básicos</a></li>
             <li><a href="#instalacion">Instalación</a></li>
             <li><a href="#comandos">Comandos esenciales</a></li>
             <li><a href="#flujo">Flujo de trabajo</a></li>
             <li><a href="#github">GitHub</a></li>
-            <li><a href="#practica">Practica</a></li>
+            <li><a href="#practica">Práctica</a></li>
         </ul>
     </nav>
 
-    <main>
-        <!-- 1️⃣ Introducción -->
+    <!-- ---------- MAIN CONTENT ---------- -->
+    <main class="container">
+
+        <!-- ==== INTRODUCCIÓN ==== -->
         <section id="intro">
             <h2>Introducción</h2>
             <p>Git es un sistema de control de versiones distribuido; GitHub es una plataforma que aloja repositorios
                 Git y facilita la colaboración.</p>
         </section>
 
-        <!-- 2️⃣ Conceptos básicos -->
+        <!-- ==== CONCEPTOS BÁSICOS ==== -->
         <section id="conceptos">
             <h2>Conceptos básicos</h2>
             <dl>
@@ -52,17 +65,23 @@
             </dl>
         </section>
 
-        <!-- 3️⃣ Instalación -->
+        <!-- ==== INSTALACIÓN ==== -->
         <section id="instalacion">
             <h2>Instalación</h2>
-            <p>En macOS:</p>
-            <pre><code>brew install git</code></pre>
-            <p>En Ubuntu/Debian:</p>
-            <pre><code>sudo apt-get update && sudo apt-get install git</code></pre>
-            <p>En Windows: descarga el instalador desde <a href="https://git-scm.com/">git‑scm.com</a>.</p>
+
+            <div class="command-block">
+                <pre><code>brew install git</code></pre>
+            </div>
+
+            <div class="command-block">
+                <pre><code>sudo apt-get update && sudo apt-get install git</code></pre>
+            </div>
+
+            <p>En Windows: descarga el instalador desde <a href="https://git-scm.com/" target="_blank">git‑scm.com</a>.
+            </p>
         </section>
 
-        <!-- 4️⃣ Tabla de comandos -->
+        <!-- ==== COMANDOS ESENCIALES ==== -->
         <section id="comandos">
             <h2>Comandos esenciales</h2>
             <table>
@@ -123,28 +142,27 @@
             </table>
         </section>
 
-        <!-- 5️⃣ Flujo de trabajo -->
+        <!-- ==== FLUJO DE TRABAJO ==== -->
         <section id="flujo">
             <h2>Flujo de trabajo típico</h2>
             <ol>
-                <li>Crear repositorio (`git init`).</li>
-                <li>Añadir archivos (`git add`).</li>
-                <li>Hacer commit (`git commit`).</li>
-                <li>Crear repositorio remoto en GitHub y enlazarlo (`git remote add origin …`).</li>
-                <li>Push al remoto (`git push -u origin main`).</li>
+                <li>Crear repositorio (<code>git init</code>).</li>
+                <li>Añadir archivos (<code>git add</code>).</li>
+                <li>Hacer commit (<code>git commit</code>).</li>
+                <li>Crear repositorio remoto en GitHub y enlazarlo (<code>git remote add origin …</code>).</li>
+                <li>Push al remoto (<code>git push -u origin main</code>).</li>
                 <li>Crear ramas para nuevas funcionalidades, trabajar, mergear, etc.</li>
             </ol>
-            <img src="./assets/flujo-git.svg" alt="Diagrama del flujo de trabajo con Git">
         </section>
 
-        <!-- 6️⃣ GitHub -->
+        <!-- ==== GITHUB ==== -->
         <section id="github">
             <h2>Trabajar con GitHub</h2>
             <p>Pasos básicos para crear un repo remoto:</p>
             <ol>
                 <li>En GitHub, pulsa <strong>New repository</strong>.</li>
                 <li>Selecciona nombre, descripción y visibilidad.</li>
-                <li>No marques “Initialize with a README” (ya lo tienes).</li>
+                <li>No marques “Initialize with a README”.</li>
                 <li>Copia la URL del repo (HTTPS o SSH).</li>
                 <li>En tu terminal: <code>git remote add origin &lt;URL&gt;</code></li>
                 <li>Empuja tu rama principal: <code>git push -u origin main</code></li>
@@ -153,23 +171,32 @@
                 colaborar.</p>
         </section>
 
-        <!-- 7️⃣ Sandbox interactivo -->
-        <section id="practica">
-            <h2>Practica en línea</h2>
-            <p>Abre el sandbox y sigue los ejercicios propuestos:</p>
-            <a href="https://gitpod.io/#https://github.com/tu-usuario/git-tutorial-sandbox" target="_blank"
-                rel="noopener" class="button">Abrir sandbox en GitPod</a>
+        ==== PRÁCTICA ====
+        <h2>Practica en línea</h2>
+        <p>Abre el workspace de Gitpod y sigue los ejercicios propuestos:</p>
 
-            <p>O usa el iframe de Replit:</p>
-            <iframe src="https://replit.com/@tu-usuario/git-tutorial-sandbox?lite=true" width="100%" height="500px"
-                frameborder="0"></iframe>
+        <a href="https://gitpod.io/#https://github.com/taguivalle/git-tutorial-sandbox" target="_blank" rel="noopener"
+            class="button">
+            <span aria-hidden="true">🚀</span> Abrir workspace en Gitpod
+        </a>
+
+        <!--  Vista embebida (funciona en la mayoría de los navegadores) 
+            <iframe src="https://gitpod.io/#https://github.com/taguivalle/git-tutorial-sandbox?embed=true" width="100%"
+                height="500" style="border:0;border-radius:4px;margin-top:1rem;" allowfullscreen
+                sandbox="allow-scripts allow-same-origin allow-modals">
+            </iframe> -->
         </section>
+        </section>
+
     </main>
 
+    <!-- ---------- FOOTER ---------- -->
     <footer class="site-footer">
-        <p>© 2026 — <a href="https://github.com/tu-usuario/git-tutorial">Git Tutorial</a></p>
+        <p>© 2026 — <a href="https://github.com/taguivalle/git-tutorial">Git Tutorial</a></p>
     </footer>
 
+    <!-- ---------- SCRIPTS ---------- -->
+    <script src="./js/main.js" defer></script>
 </body>
 
 </html>

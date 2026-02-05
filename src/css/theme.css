@@ -1,27 +1,359 @@
-/* VARIABLES GLOBALES (tema claro por defecto) */
+/* ==============================================================
+   theme.css – estilos para la página de tutoría Git & GitHub
+   ============================================================== */
+
+/* -------------------- 1. Variables de color -------------------- */
 :root {
-    --bg-color: #f9f9f9;
-    --text-color: #333;
-    --primary-color: #2c3e50;
-    --secondary-color: #ecf0f1;
-    --accent-color: #3498db;
-    --border-color: #ddd;
+    /* Paleta principal */
+    --clr-primary: #2c3e50;
+    /* azul oscuro */
+    --clr-accent: #3498db;
+    /* azul brillante */
+    --clr-bg: #fafafa;
+    /* fondo claro */
+    --clr-text: #333333;
+    /* texto principal */
+    --clr-muted: #777777;
+    /* texto secundario / notas */
+    --clr-success: #27ae60;
+    /* verde (para mensajes de copia) */
+    --clr-error: #e74c3c;
+    /* rojo (errores) */
+
+    /* Tipografía */
+    --font-base: "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "Courier New", Courier, monospace;
 }
 
-/* ESTILOS QUE UTILIZAN LAS VARIABLES */
+/* -------------------- 2. Reset / Normalize -------------------- */
+/* Si incluyes normalize.css antes de este archivo, no necesitas nada aquí.
+   Sólo aseguramos que el box‑model sea consistente. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* -------------------- 3. Tipografía global -------------------- */
+html {
+    font-size: 16px;
+    /* base para rem */
+}
+
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-base);
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    line-height: 1.6;
 }
 
-/* ... resto de tus reglas (navbar, .command-block, .copy-btn, etc.) ... */
-
-/* MODO OSCURO – SOLO SE ACTIVA CUANDO html[data-theme="dark"] */
-html[data-theme="dark"] {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --primary-color: #1e1e1e;
-    --secondary-color: #1f2a38;
-    --accent-color: #ff9800;
-    --border-color: #333;
+/* -------------------- 4. Contenedor principal -------------------- */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
 }
+
+/* -------------------- 5. Header & Navegación -------------------- */
+.site-header {
+    text-align: center;
+    padding: 1.5rem 0;
+    background: var(--clr-primary);
+    color: #fff;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+.site-header p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, .85);
+}
+
+/* Barra de navegación */
+.site-nav {
+    background: var(--clr-primary);
+}
+
+.site-nav ul.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.site-nav ul.menu li {
+    margin: 0 0.8rem;
+}
+
+.site-nav ul.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.3rem 0;
+    position: relative;
+}
+
+.site-nav ul.menu a:hover,
+.site-nav ul.menu a.active {
+    color: var(--clr-accent);
+}
+
+.site-nav ul.menu a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: var(--clr-accent);
+}
+
+/* Hamburger (solo visible en móviles) */
+#mobile-menu-toggle {
+    display: none;
+    /* se muestra con media query */
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* -------------------- 6. Secciones -------------------- */
+section {
+    margin-bottom: 2.5rem;
+    padding-top: 1rem;
+    /* para que el encabezado no quede tapado */
+}
+
+section h2 {
+    margin-top: 0;
+    color: var(--clr-primary);
+    font-size: 1.8rem;
+}
+
+/* -------------------- 7. Tablas de comandos -------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th,
+table td {
+    border: 1px solid #e0e0e0;
+    padding: 0.6rem;
+    text-align: left;
+}
+
+table th {
+    background: var(--clr-primary);
+    color: #fff;
+}
+
+table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* -------------------- 8. Bloques de código -------------------- */
+.command-block {
+    position: relative;
+    /* para posicionar el botón */
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.command-block pre {
+    margin: 0;
+    padding: 0.8rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.94rem;
+    overflow-x: auto;
+    background: transparent;
+}
+
+/* Botón “Copiar” */
+.copy-btn {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    background: var(--clr-accent);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: background 0.2s, opacity 0.2s;
+}
+
+.copy-btn:hover {
+    background: #2980b9;
+    opacity: 1;
+}
+
+/* Mensaje breve de confirmación (se muestra con JS) */
+.copy-feedback {
+    position: absolute;
+    top: 2.4rem;
+    right: 0.4rem;
+    background: var(--clr-success);
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.78rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.copy-feedback.show {
+    opacity: 1;
+}
+
+/* -------------------- 9. Footer -------------------- */
+.site-footer {
+    background: var(--clr-primary);
+    color: #fff;
+    text-align: center;
+    padding: 0.9rem 0;
+    font-size: 0.9rem;
+}
+
+.site-footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* -------------------- 10. Responsividad -------------------- */
+@media (max-width: 768px) {
+
+    /* Menú colapsado en tablets */
+    .site-nav ul.menu {
+        flex-direction: column;
+        display: none;
+        /* oculto por defecto */
+    }
+
+    .site-nav ul.menu.show {
+        display: flex;
+    }
+
+    #mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    /* Reduce tamaños de fuente */
+    .site-header h1 {
+        font-size: 1.9rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header h1 {
+        font-size: 1.6rem;
+    }
+
+    /* --------------------------------------------------------------
+   ESTILO PROPIO PARA EL ENLACE .button (Gitpod)
+   -------------------------------------------------------------- */
+
+    /* 1. Apariencia base del botón */
+    .button {
+        display: inline-block;
+        /* permite ancho/alto como bloque */
+        background: var(--clr-accent);
+        /* usa el azul brillante que ya tienes */
+        color: #fff;
+        /* texto blanco */
+        padding: 0.45rem 0.9rem;
+        /* espacio interior */
+        border-radius: 4px;
+        /* esquinas redondeadas */
+        text-decoration: none;
+        /* quita subrayado */
+        font-weight: 500;
+        /* un poco más grueso */
+        font-size: 0.95rem;
+        /* tamaño legible */
+        transition: background 0.2s ease,
+            transform 0.1s ease;
+        /* animación suave */
+    }
+
+    /* 2. Estado hover (cuando el cursor está encima) */
+    .button:hover,
+    .button:focus {
+        background: #2980b9;
+        /* tono más oscuro del azul */
+        transform: translateY(-1px);
+        /* leve elevación */
+    }
+
+    /* 3. Estado activo (cuando se pulsa) */
+    .button:active {
+        background: #1c639e;
+        /* aún más oscuro */
+        transform: translateY(0);
+        /* vuelve a posición original */
+    }
+
+    /* 4. Opcional: sombra ligera para dar profundidad */
+    .button {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    /* 5. Si también quieres estilizar el iframe (opcional) */
+    #practica iframe {
+        border: 2px solid var(--clr-accent);
+        border-radius: 4px;
+        margin-top: 1rem;
+    }
+
+    .site-header p {
+        font-size: 0.9rem;
+    }
+
+    /* Oculta el enlace con clase .button y el iframe dentro de la sección #practica */
+    #practica a.button,
+    #practica iframe {
+        display: none;
+        /* No ocupa espacio visual */
+    }
+
+    /* Si en algún otro lugar de la página usas .button y quieres que siga visible,
+   esta regla solo afecta a la sección de práctica. */
+
+    table th,
+    table td {
+        font-size: 0.85rem;
+        padding: 0.4rem;
+    }
+
+    .copy-btn {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+    }
+}
+
+/* --------------------------------------------------------------
+   Fin de theme.css
+   -------------------------------------------------------------- */

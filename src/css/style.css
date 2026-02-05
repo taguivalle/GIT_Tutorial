@@ -7,8 +7,24 @@
 :root {
     --primary: #2c3e50;
     --accent: #3498db;
+    --secondary: #ffffff;
+    /* added */
     --bg: #fafafa;
     --text: #333;
+}
+
+.navbar {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+.menu a {
+    color: var(--secondary);
+}
+
+.footer {
+    background-color: var(--primary);
+    color: var(--secondary);
 }
 
 /* Tipografía global */

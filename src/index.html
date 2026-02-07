@@ -8,11 +8,20 @@
     <meta name="description" content="Guía práctica de Git y GitHub">
     <title>Guía práctica de Git &amp; GitHub</title>
 
-    <!-- Reset (opcional) -->
-    <link rel="stylesheet" href="./css/normalize.css">
-
     <!-- Nuestra hoja de estilos principal -->
-    <link rel="stylesheet" href="./css/theme.css">
+
+    <head>
+        <!-- Normalización (única, con hash correcto) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+            integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous">
+
+        <!-- Tema propio (colores, tipografías, etc.) -->
+        <link rel="stylesheet" href="./css/theme.css">
+
+        <!-- Estilos de la aplicación (sobre escribe tema si es necesario) -->
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+
 </head>
 
 <body>
@@ -172,19 +181,20 @@
         </section>
 
         <!-- ==== PRÁCTICA ==== -->
-        <h2>Practica en línea</h2>
-        <p>Abre el workspace de Gitpod y sigue los ejercicios propuestos:</p>
+        <section id="practica-online">
+            <h2>Práctica en línea</h2>
+            <p>Abre el workspace de Gitpod y sigue los ejercicios propuestos:</p>
 
-        <a href="https://gitpod.io/#https://github.com/taguivalle/git-tutorial-sandbox" target="_blank" rel="noopener"
-            class="button">
-            <span aria-hidden="true">🚀</span> Abrir workspace en Gitpod
-        </a>
+            <a href="https://gitpod.io/#https://github.com/taguivalle/git-tutorial-sandbox" target="_blank"
+                rel="noopener" class="button">
+                <span aria-hidden="true">🚀</span> Abrir workspace en Gitpod
+            </a>
 
-        <!--  Vista embebida (funciona en la mayoría de los navegadores) 
-            <iframe src="https://gitpod.io/#https://github.com/taguivalle/git-tutorial-sandbox?embed=true" width="100%"
+            <!-- Versión embed (compatible con la CSP actual) -->
+            <iframe src="https://gitpod.io/embed/https://github.com/taguivalle/git-tutorial-sandbox" width="100%"
                 height="500" style="border:0;border-radius:4px;margin-top:1rem;" allowfullscreen
                 sandbox="allow-scripts allow-same-origin allow-modals">
-            </iframe> -->
+            </iframe>
         </section>
         </section>
 

@@ -82,8 +82,17 @@ h1 {
 }
 
 /* Secciones */
+/* Secciones */
 section {
     margin-bottom: 2rem;
+}
+
+/* ---------- Layout específico de la práctica ----------
+   Añadimos un margen superior solo a la sección que contiene
+   la práctica en línea (id="practica-online") */
+section#practica-online {
+    margin-top: 2rem;
+    /* espacio superior entre esta sección y la anterior */
 }
 
 /* Footer */

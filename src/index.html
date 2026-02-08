@@ -6,20 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Guía práctica de Git &amp; GitHub</title>
 
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; style-src 'self' https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; frame-src https://replit.com https://*.replit.com; frame-ancestors 'self' http://localhost:5500 http://127.0.0.1:5500 http://10.2.0.2:5500 http://192.168.1.55:5500; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self';">
-
     <!-- Normalización (opcional) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous">
 
+    <!-- CSP (meta‑tag, funciona en Five Server) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+                   style-src 'self' https://cdnjs.cloudflare.com;
+                   script-src 'self' 'unsafe-inline' 'unsafe-eval';
+                   frame-src https://replit.com https://*.replit.com;
+                   frame-ancestors 'self' http://localhost:5500 http://127.0.0.1:5500 http://10.2.0.2:5500 http://192.168.1.55:5500;
+                   img-src 'self' data:;
+                   font-src 'self' https://fonts.gstatic.com;
+                   connect-src 'self';">
+
     <!-- Estilos propios -->
-    <link rel="stylesheet" href="./css/theme.css"> <!-- Base / variables -->
-    <link rel="stylesheet" href="./css/style.css"> <!-- Personalizaciones -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <header class="site-header">
+        <img src="./assets/icons/tutorial.svg" alt="Logo" class="logo" width="48" height="48">
         <h1>Guía práctica de Git &amp; GitHub</h1>
         <p>Aprende a versionar tu código y a colaborar en proyectos.</p>
         <button id="mobile-menu-toggle" aria-label="Abrir menú">☰</button>
@@ -27,26 +34,25 @@
 
     <nav class="site-nav">
         <ul class="menu">
-            <li><a href="#intro">Introducción</a></li>
-            <li><a href="#conceptos">Conceptos</a></li>
-            <li><a href="#instalacion">Instalación</a></li>
-            <li><a href="#comandos">Comandos</a></li>
-            <li><a href="#flujo">Flujo</a></li>
-            <li><a href="#github">GitHub</a></li>
-            <li><a href="#practica">Práctica</a></li>
+            <li><a href="#intro"><img src="./assets/icons/git.svg" alt="Git"> Introducción</a></li>
+            <li><a href="#conceptos"><img src="./assets/icons/github.svg" alt="GitHub"> Conceptos básicos</a></li>
+            <li><a href="#instalacion"><img src="./assets/icons/terminal.svg" alt="Terminal"> Instalación</a></li>
+            <li><a href="#comandos"><img src="./assets/icons/git.svg" alt="Git"> Comandos esenciales</a></li>
+            <li><a href="#flujo"><img src="./assets/icons/flow.svg" alt="Flujo"> Flujo de trabajo</a></li>
+            <li><a href="#github"><img src="./assets/icons/github.svg" alt="GitHub"> GitHub</a></li>
+            <li><a href="#practica"><img src="./assets/icons/replit.svg" alt="Replit"> Práctica</a></li>
         </ul>
     </nav>
 
     <main class="container">
-
-        <!-- ==================== INTRODUCCIÓN ==================== -->
+        <!-- ==== INTRODUCCIÓN ==== -->
         <section id="intro">
             <h2>Introducción</h2>
-            <p>Git es un sistema de control de versiones distribuido; GitHub es una plataforma que aloja repositorios
-                Git y facilita la colaboración.</p>
+            <p>Git es un sistema de control de versiones distribuido; GitHub es la plataforma que aloja repositorios Git
+                y facilita la colaboración.</p>
         </section>
 
-        <!-- ==================== CONCEPTOS ==================== -->
+        <!-- ==== CONCEPTOS BÁSICOS ==== -->
         <section id="conceptos">
             <h2>Conceptos básicos</h2>
             <dl>
@@ -63,7 +69,7 @@
             </dl>
         </section>
 
-        <!-- ==================== INSTALACIÓN ==================== -->
+        <!-- ==== INSTALACIÓN ==== -->
         <section id="instalacion">
             <h2>Instalación</h2>
 
@@ -78,7 +84,7 @@
                     rel="noopener noreferrer">git‑scm.com</a>.</p>
         </section>
 
-        <!-- ==================== COMANDOS ==================== -->
+        <!-- ==== COMANDOS ESENCIALES ==== -->
         <section id="comandos">
             <h2>Comandos esenciales</h2>
             <table>
@@ -139,7 +145,7 @@
             </table>
         </section>
 
-        <!-- ==================== FLUJO ==================== -->
+        <!-- ==== FLUJO DE TRABAJO ==== -->
         <section id="flujo">
             <h2>Flujo de trabajo típico</h2>
             <ol>
@@ -151,17 +157,17 @@
                 <li>Crear ramas para nuevas funcionalidades, trabajar, mergear, etc.</li>
             </ol>
 
-            <!-- Diagrama de flujo (puedes crear un SVG a partir de tu esquema) -->
+            <!-- Diagrama de flujo (puedes usar tu propio SVG) -->
             <figure>
-                <img src="assets/img/esquema.png" alt="Diagrama de flujo de trabajo con Git" class="responsive-img">
+                <img src="./assets/img/flujo.svg" alt="Diagrama de flujo de trabajo con Git" class="responsive-img">
                 <figcaption>Flujo de trabajo resumido</figcaption>
             </figure>
         </section>
 
-        <!-- ==================== GITHUB ==================== -->
+        <!-- ==== GITHUB ==== -->
         <section id="github">
             <h2>Trabajar con GitHub</h2>
-            <p>Pasos básicos para crear un repositorio remoto:</p>
+            <p>Pasos básicos para crear un repo remoto:</p>
             <ol>
                 <li>En GitHub, pulsa <strong>New repository</strong>.</li>
                 <li>Define nombre, descripción y visibilidad.</li>
@@ -174,31 +180,30 @@
                 colaborar.</p>
         </section>
 
-        <!-- ==================== PRÁCTICA ==================== -->
+        <!-- ==== PRÁCTICA EN LÍNEA ==== -->
         <section id="practica">
             <h2>Práctica en línea</h2>
             <p>Abre el workspace en Replit y sigue los ejercicios propuestos:</p>
 
-            <a href="https://replit.com/@Taguivalle/git-tutorial-1?lite=true" target="_blank" rel="noopener noreferrer"
+            <a href="https://replit.com/@TU_USUARIO/git-tutorial?lite=true" target="_blank" rel="noopener noreferrer"
                 class="button">
                 <span aria-hidden="true">🚀</span> Abrir workspace en Replit
             </a>
 
-            <!-- Opcional: embed del workspace (solo si la CSP lo permite) -->
-            <iframe src="https://replit.com/@Taguivalle/git-tutorial-1?lite=true" width="100%" height="500"
+            <!-- Embed opcional (solo si la CSP lo permite) -->
+            <iframe src="https://replit.com/@TU_USUARIO/git-tutorial?lite=true" width="100%" height="500"
                 style="border:0;border-radius:4px;margin-top:1rem;"
                 sandbox="allow-scripts allow-same-origin allow-modals" loading="lazy" title="Workspace Replit">
             </iframe>
         </section>
-
     </main>
 
     <footer class="site-footer">
-        <p>© 2026 — <a href="https://github.com/taguivalle/git-tutorial-1" target="_blank" rel="noopener noreferrer">Git
+        <p>© 2026 — <a href="https://github.com/TU_USUARIO/git-tutorial" target="_blank" rel="noopener noreferrer">Git
                 Tutorial</a></p>
     </footer>
 
-    <script src="js/main.js" defer></script>
+    <script src="./js/main.js" defer></script>
 </body>
 
 </html>

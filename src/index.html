@@ -3,61 +3,47 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Sólo un meta viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Guía práctica de Git y GitHub">
     <title>Guía práctica de Git &amp; GitHub</title>
 
-    <!-- Nuestra hoja de estilos principal -->
+    <!-- Normalización (opcional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous">
 
-    <head>
-        <!-- Normalización (única, con hash correcto) -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-            integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous">
-
-        <!-- Tema propio (colores, tipografías, etc.) -->
-        <link rel="stylesheet" href="./css/theme.css">
-
-        <!-- Estilos de la aplicación (sobre escribe tema si es necesario) -->
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
-
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="./css/theme.css"> <!-- Base / variables -->
+    <link rel="stylesheet" href="./css/style.css"> <!-- Personalizaciones -->
 </head>
 
 <body>
-    <!-- ---------- HEADER ---------- -->
     <header class="site-header">
         <h1>Guía práctica de Git &amp; GitHub</h1>
         <p>Aprende a versionar tu código y a colaborar en proyectos.</p>
-
-        <!-- Botón hamburguesa (solo visible en móvil) -->
         <button id="mobile-menu-toggle" aria-label="Abrir menú">☰</button>
     </header>
 
-    <!-- ---------- NAVIGATION ---------- -->
-    <nav id="site-nav" class="site-nav">
+    <nav class="site-nav">
         <ul class="menu">
             <li><a href="#intro">Introducción</a></li>
-            <li><a href="#conceptos">Conceptos básicos</a></li>
+            <li><a href="#conceptos">Conceptos</a></li>
             <li><a href="#instalacion">Instalación</a></li>
-            <li><a href="#comandos">Comandos esenciales</a></li>
-            <li><a href="#flujo">Flujo de trabajo</a></li>
+            <li><a href="#comandos">Comandos</a></li>
+            <li><a href="#flujo">Flujo</a></li>
             <li><a href="#github">GitHub</a></li>
             <li><a href="#practica">Práctica</a></li>
         </ul>
     </nav>
 
-    <!-- ---------- MAIN CONTENT ---------- -->
     <main class="container">
 
-        <!-- ==== INTRODUCCIÓN ==== -->
+        <!-- ==================== INTRODUCCIÓN ==================== -->
         <section id="intro">
             <h2>Introducción</h2>
             <p>Git es un sistema de control de versiones distribuido; GitHub es una plataforma que aloja repositorios
                 Git y facilita la colaboración.</p>
         </section>
 
-        <!-- ==== CONCEPTOS BÁSICOS ==== -->
+        <!-- ==================== CONCEPTOS ==================== -->
         <section id="conceptos">
             <h2>Conceptos básicos</h2>
             <dl>
@@ -74,23 +60,22 @@
             </dl>
         </section>
 
-        <!-- ==== INSTALACIÓN ==== -->
+        <!-- ==================== INSTALACIÓN ==================== -->
         <section id="instalacion">
             <h2>Instalación</h2>
 
             <div class="command-block">
                 <pre><code>brew install git</code></pre>
             </div>
-
             <div class="command-block">
                 <pre><code>sudo apt-get update && sudo apt-get install git</code></pre>
             </div>
 
-            <p>En Windows: descarga el instalador desde <a href="https://git-scm.com/" target="_blank">git‑scm.com</a>.
-            </p>
+            <p>En Windows: descarga el instalador desde <a href="https://git-scm.com/" target="_blank"
+                    rel="noopener noreferrer">git‑scm.com</a>.</p>
         </section>
 
-        <!-- ==== COMANDOS ESENCIALES ==== -->
+        <!-- ==================== COMANDOS ==================== -->
         <section id="comandos">
             <h2>Comandos esenciales</h2>
             <table>
@@ -151,26 +136,32 @@
             </table>
         </section>
 
-        <!-- ==== FLUJO DE TRABAJO ==== -->
+        <!-- ==================== FLUJO ==================== -->
         <section id="flujo">
             <h2>Flujo de trabajo típico</h2>
             <ol>
                 <li>Crear repositorio (<code>git init</code>).</li>
-                <li>Añadir archivos (<code>git add</code>).</li>
-                <li>Hacer commit (<code>git commit</code>).</li>
+                <li>Añadir archivos (<code>git add .</code>).</li>
+                <li>Hacer commit (<code>git commit -m "mensaje"</code>).</li>
                 <li>Crear repositorio remoto en GitHub y enlazarlo (<code>git remote add origin …</code>).</li>
                 <li>Push al remoto (<code>git push -u origin main</code>).</li>
                 <li>Crear ramas para nuevas funcionalidades, trabajar, mergear, etc.</li>
             </ol>
+
+            <!-- Diagrama de flujo (puedes crear un SVG a partir de tu esquema) -->
+            <figure>
+                <img src="assets/img/esquema.png" alt="Diagrama de flujo de trabajo con Git" class="responsive-img">
+                <figcaption>Flujo de trabajo resumido</figcaption>
+            </figure>
         </section>
 
-        <!-- ==== GITHUB ==== -->
+        <!-- ==================== GITHUB ==================== -->
         <section id="github">
             <h2>Trabajar con GitHub</h2>
-            <p>Pasos básicos para crear un repo remoto:</p>
+            <p>Pasos básicos para crear un repositorio remoto:</p>
             <ol>
                 <li>En GitHub, pulsa <strong>New repository</strong>.</li>
-                <li>Selecciona nombre, descripción y visibilidad.</li>
+                <li>Define nombre, descripción y visibilidad.</li>
                 <li>No marques “Initialize with a README”.</li>
                 <li>Copia la URL del repo (HTTPS o SSH).</li>
                 <li>En tu terminal: <code>git remote add origin &lt;URL&gt;</code></li>
@@ -180,33 +171,31 @@
                 colaborar.</p>
         </section>
 
-        <!-- ==== PRÁCTICA ==== -->
-        <section id="practica-online">
+        <!-- ==================== PRÁCTICA ==================== -->
+        <section id="practica">
             <h2>Práctica en línea</h2>
-            <p>Abre el workspace de Gitpod y sigue los ejercicios propuestos:</p>
+            <p>Abre el workspace en Replit y sigue los ejercicios propuestos:</p>
 
-            <a href="https://gitpod.io/#https://github.com/taguivalle/git-tutorial-sandbox" target="_blank"
-                rel="noopener" class="button">
-                <span aria-hidden="true">🚀</span> Abrir workspace en Gitpod
+            <a href="https://replit.com/@TU_USUARIO/git-tutorial?lite=true" target="_blank" rel="noopener noreferrer"
+                class="button">
+                <span aria-hidden="true">🚀</span> Abrir workspace en Replit
             </a>
 
-            <!-- Versión embed (compatible con la CSP actual) -->
-            <iframe src="https://gitpod.io/embed/https://github.com/taguivalle/git-tutorial-sandbox" width="100%"
-                height="500" style="border:0;border-radius:4px;margin-top:1rem;" allowfullscreen
-                sandbox="allow-scripts allow-same-origin allow-modals">
+            <!-- Opcional: embed del workspace (solo si la CSP lo permite) -->
+            <iframe src="https://replit.com/@TU_USUARIO/git-tutorial?lite=true" width="100%" height="500"
+                style="border:0;border-radius:4px;margin-top:1rem;"
+                sandbox="allow-scripts allow-same-origin allow-modals" loading="lazy" title="Workspace Replit">
             </iframe>
-        </section>
         </section>
 
     </main>
 
-    <!-- ---------- FOOTER ---------- -->
     <footer class="site-footer">
-        <p>© 2026 — <a href="https://github.com/taguivalle/git-tutorial">Git Tutorial</a></p>
+        <p>© 2026 — <a href="https://github.com/TU_USUARIO/git-tutorial" target="_blank" rel="noopener noreferrer">Git
+                Tutorial</a></p>
     </footer>
 
-    <!-- ---------- SCRIPTS ---------- -->
-    <script src="./js/main.js" defer></script>
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>

@@ -4,7 +4,6 @@
 
 /* -------------------- 1. Variables de color -------------------- */
 :root {
-    /* Paleta principal */
     --clr-primary: #2c3e50;
     /* azul oscuro */
     --clr-accent: #3498db;
@@ -26,8 +25,6 @@
 }
 
 /* -------------------- 2. Reset / Normalize -------------------- */
-/* Si incluyes normalize.css antes de este archivo, no necesitas nada aquí.
-   Sólo aseguramos que el box‑model sea consistente. */
 *,
 *::before,
 *::after {
@@ -37,8 +34,9 @@
 /* -------------------- 3. Tipografía global -------------------- */
 html {
     font-size: 16px;
-    /* base para rem */
 }
+
+/* base para rem */
 
 body {
     margin: 0;
@@ -70,7 +68,7 @@ body {
 }
 
 .site-header p {
-    margin-top: 0.5rem;
+    margin-top: .5rem;
     font-size: 1rem;
     color: rgba(255, 255, 255, .85);
 }
@@ -86,18 +84,18 @@ body {
     flex-wrap: wrap;
     list-style: none;
     margin: 0;
-    padding: 0.5rem 0;
+    padding: .5rem 0;
 }
 
 .site-nav ul.menu li {
-    margin: 0 0.8rem;
+    margin: 0 .8rem;
 }
 
 .site-nav ul.menu a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    padding: 0.3rem 0;
+    padding: .3rem 0;
     position: relative;
 }
 
@@ -119,7 +117,6 @@ body {
 /* Hamburger (solo visible en móviles) */
 #mobile-menu-toggle {
     display: none;
-    /* se muestra con media query */
     background: transparent;
     border: none;
     color: #fff;
@@ -131,7 +128,7 @@ body {
 section {
     margin-bottom: 2.5rem;
     padding-top: 1rem;
-    /* para que el encabezado no quede tapado */
+    /* evita que el encabezado quede tapado */
 }
 
 section h2 {
@@ -150,7 +147,7 @@ table {
 table th,
 table td {
     border: 1px solid #e0e0e0;
-    padding: 0.6rem;
+    padding: .6rem;
     text-align: left;
 }
 
@@ -166,7 +163,6 @@ table tbody tr:nth-child(even) {
 /* -------------------- 8. Bloques de código -------------------- */
 .command-block {
     position: relative;
-    /* para posicionar el botón */
     background: #f5f5f5;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -176,9 +172,9 @@ table tbody tr:nth-child(even) {
 
 .command-block pre {
     margin: 0;
-    padding: 0.8rem 1rem;
+    padding: .8rem 1rem;
     font-family: var(--font-mono);
-    font-size: 0.94rem;
+    font-size: .94rem;
     overflow-x: auto;
     background: transparent;
 }
@@ -186,17 +182,17 @@ table tbody tr:nth-child(even) {
 /* Botón “Copiar” */
 .copy-btn {
     position: absolute;
-    top: 0.4rem;
-    right: 0.4rem;
+    top: .4rem;
+    right: .4rem;
     background: var(--clr-accent);
     color: #fff;
     border: none;
     border-radius: 3px;
-    padding: 0.3rem 0.6rem;
-    font-size: 0.85rem;
+    padding: .3rem .6rem;
+    font-size: .85rem;
     cursor: pointer;
-    opacity: 0.85;
-    transition: background 0.2s, opacity 0.2s;
+    opacity: .85;
+    transition: background .2s, opacity .2s;
 }
 
 .copy-btn:hover {
@@ -208,14 +204,14 @@ table tbody tr:nth-child(even) {
 .copy-feedback {
     position: absolute;
     top: 2.4rem;
-    right: 0.4rem;
+    right: .4rem;
     background: var(--clr-success);
     color: #fff;
-    padding: 0.2rem 0.5rem;
+    padding: .2rem .5rem;
     border-radius: 3px;
-    font-size: 0.78rem;
+    font-size: .78rem;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity .3s;
 }
 
 .copy-feedback.show {
@@ -227,8 +223,8 @@ table tbody tr:nth-child(even) {
     background: var(--clr-primary);
     color: #fff;
     text-align: center;
-    padding: 0.9rem 0;
-    font-size: 0.9rem;
+    padding: .9rem 0;
+    font-size: .9rem;
 }
 
 .site-footer a {
@@ -238,8 +234,6 @@ table tbody tr:nth-child(even) {
 
 /* -------------------- 10. Responsividad -------------------- */
 @media (max-width: 768px) {
-
-    /* Menú colapsado en tablets */
     .site-nav ul.menu {
         flex-direction: column;
         display: none;
@@ -257,7 +251,6 @@ table tbody tr:nth-child(even) {
         right: 1rem;
     }
 
-    /* Reduce tamaños de fuente */
     .site-header h1 {
         font-size: 1.9rem;
     }
@@ -272,56 +265,32 @@ table tbody tr:nth-child(even) {
         font-size: 1.6rem;
     }
 
-    /* --------------------------------------------------------------
-   ESTILO PROPIO PARA EL ENLACE .button (Gitpod)
-   -------------------------------------------------------------- */
-
-    /* 1. Apariencia base del botón */
-    .button {
+    /* ----------- ESTILO DEL BOTÓN REPLIT ----------- */
+    #practica .button {
         display: inline-block;
-        /* permite ancho/alto como bloque */
         background: var(--clr-accent);
-        /* usa el azul brillante que ya tienes */
         color: #fff;
-        /* texto blanco */
-        padding: 0.45rem 0.9rem;
-        /* espacio interior */
+        padding: .45rem .9rem;
         border-radius: 4px;
-        /* esquinas redondeadas */
         text-decoration: none;
-        /* quita subrayado */
         font-weight: 500;
-        /* un poco más grueso */
-        font-size: 0.95rem;
-        /* tamaño legible */
-        transition: background 0.2s ease,
-            transform 0.1s ease;
-        /* animación suave */
+        font-size: .95rem;
+        transition: background .2s ease, transform .1s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
     }
 
-    /* 2. Estado hover (cuando el cursor está encima) */
-    .button:hover,
-    .button:focus {
+    #practica .button:hover,
+    #practica .button:focus {
         background: #2980b9;
-        /* tono más oscuro del azul */
         transform: translateY(-1px);
-        /* leve elevación */
     }
 
-    /* 3. Estado activo (cuando se pulsa) */
-    .button:active {
+    #practica .button:active {
         background: #1c639e;
-        /* aún más oscuro */
         transform: translateY(0);
-        /* vuelve a posición original */
     }
 
-    /* 4. Opcional: sombra ligera para dar profundidad */
-    .button {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    }
-
-    /* 5. Si también quieres estilizar el iframe (opcional) */
+    /* Estiliza el iframe del workspace de Replit */
     #practica iframe {
         border: 2px solid var(--clr-accent);
         border-radius: 4px;
@@ -329,31 +298,17 @@ table tbody tr:nth-child(even) {
     }
 
     .site-header p {
-        font-size: 0.9rem;
+        font-size: .9rem;
     }
-
-    /* Oculta el enlace con clase .button y el iframe dentro de la sección #practica */
-    #practica a.button,
-    #practica iframe {
-        display: none;
-        /* No ocupa espacio visual */
-    }
-
-    /* Si en algún otro lugar de la página usas .button y quieres que siga visible,
-   esta regla solo afecta a la sección de práctica. */
 
     table th,
     table td {
-        font-size: 0.85rem;
-        padding: 0.4rem;
+        font-size: .85rem;
+        padding: .4rem;
     }
 
     .copy-btn {
-        font-size: 0.75rem;
-        padding: 0.2rem 0.5rem;
+        font-size: .75rem;
+        padding: .2rem .5rem;
     }
 }
-
-/* --------------------------------------------------------------
-   Fin de theme.css
-   -------------------------------------------------------------- */

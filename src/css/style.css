@@ -1,152 +1,248 @@
-/* Reset básico (ya tienes normalize.css, pero añadimos algunos ajustes) */
-* {
+/* ---------- Variables de color ---------- */
+:root {
+    --clr-primary: #2c3e50;
+    /* azul oscuro */
+    --clr-accent: #3498db;
+    /* azul brillante */
+    --clr-bg: #fafafa;
+    /* fondo claro */
+    --clr-text: #333333;
+    /* texto principal */
+    --clr-muted: #777777;
+    /* texto secundario */
+}
+
+/* ---------- Reset básico ---------- */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-/* Variables de color (puedes ajustarlas) */
-:root {
-    --primary: #2c3e50;
-    --accent: #3498db;
-    --secondary: #ffffff;
-    /* added */
-    --bg: #fafafa;
-    --text: #333;
+/* ---------- Tipografía global ---------- */
+html {
+    font-size: 16px;
 }
 
-.navbar {
-    background-color: var(--primary);
-    color: var(--secondary);
-}
-
-.menu a {
-    color: var(--secondary);
-}
-
-.footer {
-    background-color: var(--primary);
-    color: var(--secondary);
-}
-
-/* Tipografía global */
 body {
+    margin: 0;
     font-family: "Helvetica Neue", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    background: var(--clr-bg);
+    color: var(--clr-text);
     line-height: 1.6;
 }
 
-/* Contenedor central */
+/* ---------- Contenedor principal ---------- */
 .container {
     max-width: 960px;
     margin: 0 auto;
     padding: 1rem;
 }
 
-/* Header / Navbar */
-.navbar {
-    background-color: var(--primary);
-    color: var(--secondary);
-    padding: 0.8rem 0;
-}
-
-.logo {
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-.menu {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    margin: 0;
-}
-
-.menu a {
-    color: var(--secondary);
-    text-decoration: none;
-}
-
-.menu a:hover {
-    text-decoration: underline;
-}
-
-/* Títulos */
-h1,
-h2 {
-    color: var(--primary);
-}
-
-h1 {
+/* ---------- Header ---------- */
+.site-header {
     text-align: center;
+    padding: 2rem 0;
+    background: var(--clr-primary);
+    color: #fff;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+.site-header p {
+    margin-top: .5rem;
+}
+
+/* ---------- Nav ---------- */
+.site-nav {
+    background: var(--clr-primary);
+}
+
+.site-nav ul.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: .5rem 0;
+}
+
+.site-nav ul.menu li {
+    margin: 0 .8rem;
+}
+
+.site-nav ul.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: .3rem 0;
+    position: relative;
+}
+
+.site-nav ul.menu a:hover,
+.site-nav ul.menu a.active {
+    color: var(--clr-accent);
+}
+
+.site-nav ul.menu a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: var(--clr-accent);
+}
+
+/* ---------- Mobile menu toggle ---------- */
+#mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* ---------- Secciones ---------- */
+section {
+    margin-bottom: 2.5rem;
+    padding-top: 1rem;
+}
+
+section h2 {
+    margin-top: 0;
+    color: var(--clr-primary);
+    font-size: 1.8rem;
+}
+
+/* ---------- Tabla de comandos ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 1rem;
 }
 
-/* Secciones */
-/* Secciones */
-section {
-    margin-bottom: 2rem;
+table th,
+table td {
+    border: 1px solid #e0e0e0;
+    padding: .6rem;
+    text-align: left;
 }
 
-/* ---------- Layout específico de la práctica ----------
-   Añadimos un margen superior solo a la sección que contiene
-   la práctica en línea (id="practica-online") */
-section#practica-online {
-    margin-top: 2rem;
-    /* espacio superior entre esta sección y la anterior */
+table th {
+    background: var(--clr-primary);
+    color: #fff;
 }
 
-/* Footer */
-.footer {
-    background-color: var(--primary);
-    color: var(--secondary);
-    text-align: center;
-    padding: 0.8rem 0;
-    font-size: 0.9rem;
+table tbody tr:nth-child(even) {
+    background: #f9f9f9;
 }
 
-/* Bloques de comando (mantén lo que ya tienes) */
+/* ---------- Bloques de código (copy‑to‑clipboard) ---------- */
 .command-block {
-    background: #fafafa;
+    background: #f5f5f5;
     border: 1px solid #ddd;
     border-radius: 4px;
-    margin-bottom: 1.5rem;
-    padding: 0.8rem;
-    display: flex;
-    flex-direction: column;
-    /* <‑‑ ahora el botón y la descripción quedan bajo el código */
-    gap: 0.5rem;
-    /* espacio entre los hijos */
+    margin: 1rem 0;
+    padding: .8rem;
+    position: relative;
 }
 
-/* Código */
-.command-block pre {
-    margin: 0;
-    font-size: 0.95rem;
-    overflow-x: auto;
-}
-
-/* Botón de copiar */
 .copy-btn {
-    align-self: flex-start;
-    /* alineado a la izquierda */
-    background: var(--accent);
+    position: absolute;
+    top: .4rem;
+    right: .4rem;
+    background: var(--clr-accent);
     color: #fff;
     border: none;
     border-radius: 3px;
-    padding: 0.4rem 0.8rem;
+    padding: .3rem .6rem;
+    font-size: .85rem;
     cursor: pointer;
-    font-size: 0.85rem;
-    transition: background 0.2s ease;
 }
 
-.copy-btn:hover {
+/* ---------- Botón principal (Práctica) ---------- */
+.button {
+    display: inline-block;
+    background: var(--clr-accent);
+    color: #fff;
+    padding: .45rem .9rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: .95rem;
+    transition: background .2s ease, transform .1s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
+}
+
+.button:hover,
+.button:focus {
     background: #2980b9;
+    transform: translateY(-1px);
 }
 
-/* Descripción del comando */
-.cmd-desc {
-    margin: 0;
-    font-size: 0.88rem;
-    color: #555;
-    line-height: 1.4;
+.button:active {
+    background: #1c639e;
+    transform: translateY(0);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background: var(--clr-primary);
+    color: #fff;
+    text-align: center;
+    padding: .9rem 0;
+    font-size: .9rem;
+}
+
+.site-footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* ---------- Responsividad ---------- */
+@media (max-width: 768px) {
+    .site-nav ul.menu {
+        flex-direction: column;
+        display: none;
+    }
+
+    .site-nav ul.menu.show {
+        display: flex;
+    }
+
+    #mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .site-header h1 {
+        font-size: 1.9rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .site-header p {
+        font-size: .9rem;
+    }
+
+    table th,
+    table td {
+        font-size: .85rem;
+        padding: .4rem;
+    }
 }

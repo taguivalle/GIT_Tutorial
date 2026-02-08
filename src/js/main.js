@@ -1,78 +1,55 @@
-/* main.js – lógica de la página de tutoría Git & GitHub */
+/* -------------------------------------------------
+   main.js – lógica de interacción para la tutoría Git
+   ------------------------------------------------- */
 
-/* --------------------------------------------------------------
-   1️⃣ Ejecutar cuando el DOM esté completamente cargado
-   -------------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
+    /* -------------------------------------------------
+       1️⃣  MENU MÓVIL (hamburguesa)
+       ------------------------------------------------- */
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.querySelector('.site-nav ul.menu');
 
-    /* ----------------------------------------------------------
-       1️⃣ Resaltar el enlace del menú activo al hacer scroll
-       ---------------------------------------------------------- */
-    const sections = document.querySelectorAll('section');
-    const menuLinks = document.querySelectorAll('.menu a');
-
-    const setActiveLink = () => {
-        // Busca la sección más cercana al top (+150px de margen)
-        let idx = sections.length;
-        while (--idx && window.scrollY + 150 < sections[idx].offsetTop) { }
-        menuLinks.forEach(l => l.classList.remove('active'));
-        if (menuLinks[idx]) menuLinks[idx].classList.add('active');
-    };
-    setActiveLink();
-    window.addEventListener('scroll', setActiveLink);
-
-    /* ----------------------------------------------------------
-       2️⃣ Copiar comandos Git al portapapeles
-       ---------------------------------------------------------- */
-    const commandBlocks = document.querySelectorAll('.command-block');
-
-    commandBlocks.forEach(block => {
-        const codeEl = block.querySelector('code');
-        const cmdText = codeEl ? codeEl.innerText.trim() : '';
-
-        // Crear botón si no existe
-        let copyBtn = block.querySelector('.copy-btn');
-        if (!copyBtn) {
-            copyBtn = document.createElement('button');
-            copyBtn.className = 'copy-btn';
-            copyBtn.type = 'button';
-            copyBtn.textContent = 'Copiar';
-            block.appendChild(copyBtn);
-        }
-
-        // Guardar el comando en data‑attribute (útil para futuros usos)
-        copyBtn.dataset.cmd = cmdText;
-
-        copyBtn.addEventListener('click', async () => {
-            const txt = copyBtn.dataset.cmd;
-            try {
-                await navigator.clipboard.writeText(txt);
-                // Feedback visual breve
-                const original = copyBtn.textContent;
-                copyBtn.textContent = '¡Copiado!';
-                setTimeout(() => copyBtn.textContent = original, 1500);
-            } catch (e) {
-                console.error('Error al copiar:', e);
-                alert('No se pudo copiar al portapapeles.');
-            }
-        });
-    });
-
-    /* ----------------------------------------------------------
-       3️⃣ Menú hamburguesa (responsive)
-       ---------------------------------------------------------- */
-    const toggleBtn = document.getElementById('mobile-menu-toggle');
-    const nav = document.getElementById('site-nav');
-
-    if (toggleBtn && nav) {
-        toggleBtn.addEventListener('click', () => {
-            nav.querySelector('.menu').classList.toggle('show');
-            toggleBtn.classList.toggle('open');
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show'); // muestra/oculta el menú en móvil
         });
     }
 
-    /* ----------------------------------------------------------
-       4️⃣ Otros comportamientos (ejemplo modal) – placeholder
-       ---------------------------------------------------------- */
-    // const modal = new MyModal(); …
-});
+    /* -------------------------------------------------
+       2️⃣  BOTONES “COPIAR” EN BLOQUES DE CÓDIGO
+       ------------------------------------------------- */
+    const commandBlocks = document.querySelectorAll('.command-block');
+
+    commandBlocks.forEach(block => {
+        // Creamos el botón y el mensaje de feedback
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-btn';
+        copyBtn.textContent = 'Copiar';
+
+        const feedback = document.createElement('div');
+        feedback.className = 'copy-feedback';
+        feedback.textContent = '¡Copiado!';
+
+        // Insertamos el botón y el mensaje dentro del bloque
+        block.appendChild(copyBtn);
+        block.appendChild(feedback);
+
+        // Acción al pulsar el botón
+        copyBtn.addEventListener('click', () => {
+            const code = block.querySelector('pre code');
+            if (!code) return;
+
+            // Copiamos el texto al portapapeles
+            navigator.clipboard.writeText(code.innerText).then(() => {
+                // Mostramos el mensaje de éxito
+                feedback.classList.add('show');
+                // Lo ocultamos tras 1.5 s
+                setTimeout(() => feedback.classList.remove('show'), 1500);
+            }).catch(err => {
+                // En caso de error (p. ej. HTTPS requerido)
+                console.error('Error al copiar al portapapeles:', err);
+            });
+        });
+    });
+
+}); // <-- Cierre del listener DOMContentLoaded

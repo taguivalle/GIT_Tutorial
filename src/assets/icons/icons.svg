@@ -1,0 +1,28 @@
+<!-- assets/icons/icons.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    <!-- 1️⃣ git -->
+    <symbol id="icon-git" viewBox="0 0 24 24">
+        <!-- contenido original de git.svg (sin la etiqueta <svg> exterior) -->
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.44 9.8 8.21 11.38 ..." />
+    </symbol>
+
+    <!-- 2️⃣ github -->
+    <symbol id="icon-github" viewBox="0 0 24 24">
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.44 9.8 8.21 11.38 ..." />
+    </symbol>
+
+    <!-- 3️⃣ terminal -->
+    <symbol id="icon-terminal" viewBox="0 0 24 24">
+        <path d="M2 4h20v2H2V4zm0 6h20v2H2v-2zm0 6h20v2H2v-2z" />
+    </symbol>
+
+    <!-- 4️⃣ flow -->
+    <symbol id="icon-flow" viewBox="0 0 24 24">
+        <path d="M4 4h16v2H4V4zm0 6h10v2H4v-2zm0 6h16v2H4v-2z" />
+    </symbol>
+
+    <!-- 5️⃣ replit -->
+    <symbol id="icon-replit" viewBox="0 0 24 24">
+        <path d="M12 0L0 12h4v12h8V12h4L12 0z" />
+    </symbol>
+</svg>

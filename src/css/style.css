@@ -119,6 +119,40 @@ section h2 {
     font-size: 1.8rem;
 }
 
+
+/* Contenedor exclusivo para esta tabla */
+.why-git-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1rem;
+}
+
+.why-git-table th,
+.why-git-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Cabecera sombreada */
+.why-git-table th {
+    background-color: #4a90e2;
+    /* azul suave */
+    color: #fff;
+}
+
+/* Filas pares con fondo gris claro */
+.why-git-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover opcional para mayor legibilidad */
+.why-git-table tr:hover {
+    background-color: #e1f5fe;
+}
+
+
 /* ---------- Tabla de comandos ---------- */
 table {
     width: 100%;

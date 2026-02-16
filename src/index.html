@@ -29,26 +29,6 @@
           connect-src 'self' https://cdnjs.cloudflare.com;
           frame-src   https://replit.com https://*.replit.com;
         ">
-
-    <style>
-        :root {
-            --icon-size: 1.4rem;
-            --icon-gap: .4rem;
-        }
-
-        .site-nav .menu svg.icon {
-            width: var(--icon-size);
-            height: var(--icon-size);
-            fill: currentColor;
-            margin-right: var(--icon-gap);
-            vertical-align: middle;
-        }
-
-        .site-nav .menu a:hover svg.icon,
-        .site-nav .menu a:focus svg.icon {
-            fill: #0066cc;
-        }
-    </style>
 </head>
 </head>
 
@@ -143,7 +123,6 @@
             <h1>¿Por qué usar Git?</h1>
             <!-- ====================  ¿Por qué usar Git?  ==================== -->
             <section id="por-que-usar-git">
-                <h2>¿Por qué usar Git?</h2>
                 <!-- ====================  Tabla con estilo sombreado (solo afecta a esta sección)  ==================== -->
 
                 <table class="why-git-table">
@@ -191,20 +170,83 @@
         </section>
 
         <!-- ==== CONCEPTOS BÁSICOS ==== -->
-        <section id="conceptos">
-            <h2>Conceptos básicos</h2>
-            <dl>
-                <dt>Repositorio</dt>
-                <dd>Contenedor que guarda todo el historial de cambios.</dd>
-                <dt>Commit</dt>
-                <dd>Instantánea del proyecto en un momento dado.</dd>
-                <dt>Branch (rama)</dt>
-                <dd>Línea paralela de desarrollo.</dd>
-                <dt>Merge</dt>
-                <dd>Unir cambios de una rama a otra.</dd>
-                <dt>Staging area</dt>
-                <dd>Zona intermedia donde se preparan los archivos antes del commit.</dd>
-            </dl>
+        <section id="git-basics">
+            <h2 class="section-title">Conceptos básicos de Git</h2>
+
+            <!-- Tarjetas de conceptos -->
+            <div class="concept-grid">
+
+                <!-- Repositorio -->
+                <article class="concept-card">
+                    <h3 class="concept-title">
+                        <svg class="icon" aria-hidden="true">
+                            <use href="#repo-icon" />
+                        </svg>
+                        Repositorio
+                    </h3>
+                    <p class="concept-desc">
+                        Contenedor que guarda todo el historial de cambios del proyecto.
+                    </p>
+                    <pre class="code-example"><code>git init          <!-- crea un nuevo repositorio --></code></pre>
+                </article>
+
+                <!-- Commit -->
+                <article class="concept-card">
+                    <h3 class="concept-title">
+                        <svg class="icon" aria-hidden="true">
+                            <use href="#commit-icon" />
+                        </svg>
+                        Commit
+                    </h3>
+                    <p class="concept-desc">
+                        Instantánea del proyecto en un momento dado.
+                    </p>
+                    <pre class="code-example"><code>git commit -m "Añadir README"</code></pre>
+                </article>
+
+                <!-- Branch (rama) -->
+                <article class="concept-card">
+                    <h3 class="concept-title">
+                        <svg class="icon" aria-hidden="true">
+                            <use href="#branch-icon" />
+                        </svg>
+                        Branch (rama)
+                    </h3>
+                    <p class="concept-desc">
+                        Línea paralela de desarrollo que permite trabajar de forma aislada.
+                    </p>
+                    <pre class="code-example"><code>git branch nueva-funcionalidad</code></pre>
+                </article>
+
+                <!-- Merge -->
+                <article class="concept-card">
+                    <h3 class="concept-title">
+                        <svg class="icon" aria-hidden="true">
+                            <use href="#merge-icon" />
+                        </svg>
+                        Merge
+                    </h3>
+                    <p class="concept-desc">
+                        Unir cambios de una rama a otra.
+                    </p>
+                    <pre class="code-example"><code>git merge nueva-funcionalidad</code></pre>
+                </article>
+
+                <!-- Staging area -->
+                <article class="concept-card">
+                    <h3 class="concept-title">
+                        <svg class="icon" aria-hidden="true">
+                            <use href="#stage-icon" />
+                        </svg>
+                        Staging area
+                    </h3>
+                    <p class="concept-desc">
+                        Zona intermedia donde se preparan los archivos antes del commit.
+                    </p>
+                    <pre class="code-example"><code>git add archivo.txt</code></pre>
+                </article>
+
+            </div>
         </section>
 
         <!-- ==== INSTALACIÓN ==== -->

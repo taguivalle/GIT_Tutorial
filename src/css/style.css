@@ -1,3 +1,24 @@
+/* ----- Variables de iconos (puedes colocarlas junto a otras variables) ----- */
+:root {
+    --icon-size: 1.4rem;
+    --icon-gap: .4rem;
+}
+
+/* ----- Iconos dentro del menú de navegación ----- */
+.site-nav .menu svg.icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    fill: currentColor;
+    margin-right: var(--icon-gap);
+    vertical-align: middle;
+}
+
+/* ----- Estado hover/focus del enlace ----- */
+.site-nav .menu a:hover svg.icon,
+.site-nav .menu a:focus svg.icon {
+    fill: #0066cc;
+}
+
 /* ---------- Variables de color ---------- */
 :root {
     --clr-primary: #2c3e50;
@@ -119,41 +140,7 @@ section h2 {
     font-size: 1.8rem;
 }
 
-
-/* Contenedor exclusivo para esta tabla */
-.why-git-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 1rem;
-}
-
-.why-git-table th,
-.why-git-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-/* Cabecera sombreada */
-.why-git-table th {
-    background-color: #4a90e2;
-    /* azul suave */
-    color: #fff;
-}
-
-/* Filas pares con fondo gris claro */
-.why-git-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Hover opcional para mayor legibilidad */
-.why-git-table tr:hover {
-    background-color: #e1f5fe;
-}
-
-
-/* ---------- Tabla de comandos ---------- */
+/* ---------- Tabla de comandos (global) ---------- */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -199,6 +186,78 @@ table tbody tr:nth-child(even) {
     cursor: pointer;
 }
 
+/* -------------------------------------------------
+   Bloque “Conceptos básicos de Git”
+   ------------------------------------------------- */
+
+/* Grid que adapta el número de columnas según el ancho */
+.concept-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* Tarjeta individual */
+.concept-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+/* Hover para dar sensación de “clickeable” */
+.concept-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .12);
+}
+
+/* Título de cada tarjeta */
+.concept-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    margin-bottom: .5rem;
+    color: var(--clr-primary);
+}
+
+/* Iconos dentro del título */
+.concept-title .icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    fill: currentColor;
+    margin-right: var(--icon-gap);
+}
+
+/* Descripción breve */
+.concept-desc {
+    margin: .4rem 0 0.8rem;
+    line-height: 1.4;
+    color: var(--clr-text);
+}
+
+/* Bloque de código (ejemplo de comando) */
+.code-example {
+    background: #f8f8f8;
+    border-left: 3px solid var(--clr-accent);
+    padding: .6rem;
+    overflow-x: auto;
+    font-family: "Courier New", monospace;
+    font-size: .9rem;
+}
+
+/* Responsividad: reduce márgenes en pantallas pequeñas */
+@media (max-width: 480px) {
+    .concept-card {
+        padding: .8rem;
+    }
+
+    .concept-title {
+        font-size: 1rem;
+    }
+}
+
 /* ---------- Botón principal (Práctica) ---------- */
 .button {
     display: inline-block;
@@ -236,6 +295,36 @@ table tbody tr:nth-child(even) {
 .site-footer a {
     color: #fff;
     text-decoration: underline;
+}
+
+/* ---------- Tabla exclusiva “why‑git” ---------- */
+/* (Se coloca después de los estilos genéricos de tabla) */
+.why-git-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1rem;
+}
+
+.why-git-table th,
+.why-git-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.why-git-table th {
+    background-color: #4a90e2;
+    /* azul suave */
+    color: #fff;
+}
+
+.why-git-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.why-git-table tr:hover {
+    background-color: #e1f5fe;
 }
 
 /* ---------- Responsividad ---------- */
@@ -278,5 +367,13 @@ table tbody tr:nth-child(even) {
     table td {
         font-size: .85rem;
         padding: .4rem;
+    }
+
+    /* Ajuste opcional para la tabla “why‑git” en móvil */
+    .why-git-table th,
+    .why-git-table td {
+        padding: 6px;
+        /* un poco menos de espacio en pantallas pequeñas */
+        font-size: .9rem;
     }
 }
